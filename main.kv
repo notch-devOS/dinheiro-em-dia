@@ -1,0 +1,34 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Dashboard'
+            font_size: 32
+        RecycleView:
+            id: transaction_list
+            viewclass: 'TransactionItem'
+            RecycleDataViewBehavior:
+                data: root.transaction_data
+            RecycleViewLayout:
+                default_size: None, dp(30)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            TextInput:
+                id: description_input
+                hint_text: 'Descrição'
+            TextInput:
+                id: amount_input
+                hint_text: 'Valor'
+            Button:
+                text: 'Adicionar Entrada'
+                on_press: root.add_transaction(description_input.text, amount_input.text, 'entry')
+            Button:
+                text: 'Adicionar Saída'
+                on_press: root.add_transaction(description_input.text, amount_input.text, 'exit')
+
+<TransactionItem@Label>:
+    text: f"{root.description}: {root.amount} ({root.type})"

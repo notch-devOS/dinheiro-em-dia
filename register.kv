@@ -1,0 +1,19 @@
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Registro'
+            font_size: 40
+        TextInput:
+            id: username
+            hint_text: 'Usuário'
+        TextInput:
+            id: password
+            hint_text: 'Senha'
+            password: True
+        Button:
+            text: 'Cadastrar'
+            on_release: root.do_register()
+        Button:
+            text: 'Voltar'
+            on_release: app.root.current = 'login'

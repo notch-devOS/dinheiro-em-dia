@@ -1,0 +1,19 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Login'
+            font_size: 40
+        TextInput:
+            id: username
+            hint_text: 'Usuário'
+        TextInput:
+            id: password
+            hint_text: 'Senha'
+            password: True
+        Button:
+            text: 'Entrar'
+            on_release: root.do_login()
+        Button:
+            text: 'Cadastrar'
+            on_release: app.root.current = 'register'

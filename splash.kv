@@ -1,0 +1,12 @@
+<SplashScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Bem-vindo ao Dinheiro em Dia'
+            font_size: 40
+        Image:
+            source: 'splash_image.png'  # Insira a imagem desejada aqui
+        # Usar on_enter para mudar a tela após 3 segundos
+        on_enter:
+            app.root.current = 'login'
+            app.root.transition.duration = 1.0  # Duração da transição
